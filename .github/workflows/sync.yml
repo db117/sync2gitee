@@ -1,0 +1,23 @@
+on:
+  push:
+    # 每一次提交后执行
+    branches: master
+  schedule:
+    # 每天早上搞
+    - cron: '7 7 * * *'
+name: Mirror GitHub Auto Queried Repos to Gitee
+jobs:
+  run:
+    name: Sync-GitHub-to-Gitee
+    runs-on: ubuntu-latest
+    steps:
+    - name: sync2gitee
+      uses: Yikun/hub-mirror-action@master
+      with:
+        src: github/db117
+        dst: gitee/db117
+        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+        dst_token: ${{ secrets.GITEE_TOKEN }}
+        force_update: true # 强制
+        clone_style: "ssh"
+        static_list: "example,doc,leetCode,jmh-test,Greasy-Fork,ideaConfig"
