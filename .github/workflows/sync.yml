@@ -19,5 +19,4 @@ jobs:
         dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
         dst_token: ${{ secrets.GITEE_TOKEN }}
         force_update: true # 强制
-        clone_style: "ssh"
         static_list: "example,doc,leetCode,jmh-test,Greasy-Fork"
