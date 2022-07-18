@@ -20,4 +20,4 @@ jobs:
         dst_token: ${{ secrets.GITEE_TOKEN }}
         force_update: true # 强制
         mappings: "leetCode=>leet-code"
-        static_list: "example,doc,leetCode,jmh-test,Greasy-Fork"
+        static_list: "example,doc,algorithm,jmh-test,Greasy-Fork"
